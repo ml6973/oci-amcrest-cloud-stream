@@ -1,0 +1,18 @@
+[GlobalInformation]
+uploadSize = ( The maximum size each video file will be in MegaBytes )
+bufferSize = ( The maximum size of the video buffer in memory in MegaBytes, this applies to each camera )
+cloudSelect = ( The cloud provider you wish to upload the videos to )
+chameleonAuthURL = ( Use appropriate information )
+chameleonObjectStorageURL = ( Use appropriate information )
+chameleonTenantName = ( Use appropriate information )
+chameleonContainerName = ( Use appropriate information )
+chameleonCloudUsername = ( Use appropriate information )
+chameleonCloudPassword = ( Use appropriate information )
+
+[( Use a unique name for the camera )]
+hostname: ( IP Address of the camera )
+username: ( Username of the camera )
+password: ( Password of the camera )
+port: ( Port of the camera )
+
+( Repeat the above section for each camera you are using, ensure the name of the cameras are unique )
