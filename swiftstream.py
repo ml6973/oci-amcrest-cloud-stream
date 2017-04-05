@@ -53,8 +53,8 @@ def realtime_swift_stream(self, channel=1, typeno=0):
          fileName = camera.machine_name[5:] + " " + fileName
 
          # Retrieve authentication for swift and setup storage location
-         my_token_id = chameleonAuth.auth()
-         url = globalVars.chameleonObjectStorageURL + "/" + globalVars.chameleonContainerName + "/" + fileName
+         my_token_id = chameleonAuth.auth(tenantName)
+         url = globalVars.chameleonObjectStorageURL + "/" + containerName + "/" + path + "/" + fileName
          my_headers = {"Content-Type": 'binary/octet-stream', "Transfer-Encoding": "chunked", "X-Auth-Token": my_token_id}
 
          # Create a new buffer for streaming
@@ -93,6 +93,13 @@ if __name__ == '__main__':
       for camera in globalVars.cameraList:
 
          amcrest = AmcrestCamera(camera['hostname'], camera['port'], camera['username'], camera['password'])
+
+         tenantName = camera['chameleontenantname']
+         containerName = camera['chameleoncontainername']
+         path = camera['chameleonpath']
+         path = path.lstrip("/")
+         path = path.rstrip("/")
+
          camera = amcrest.camera
 
          camera.realtime_swift_stream = types.MethodType( realtime_swift_stream, camera )

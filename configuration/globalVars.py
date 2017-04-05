@@ -22,20 +22,6 @@ def init():
         if (cloudSelect != "chameleon"):
 	    pass
 
-    global chameleonTenantName
-    try:
-        chameleonTenantName = config.get('GlobalInformation', 'chameleonTenantName')
-    except ConfigParser.NoOptionError:
-        if (cloudSelect != "chameleon"):
-	    pass
-
-    global chameleonContainerName
-    try:
-        chameleonContainerName = config.get('GlobalInformation', 'chameleonContainerName')
-    except ConfigParser.NoOptionError:
-        if (cloudSelect != "chameleon"):
-	    pass
-
     global chameleonCloudUsername
     try:
         chameleonCloudUsername = config.get('GlobalInformation', 'chameleonCloudUsername')

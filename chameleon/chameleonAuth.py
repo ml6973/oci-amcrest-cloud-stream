@@ -3,12 +3,12 @@ import requests
 import json
 
 
-def auth():
+def auth(tenantName):
     url = globalVars.chameleonAuthURL
 
     body = {
             "auth": {
-                "tenantName": globalVars.chameleonTenantName,
+                "tenantName": tenantName,
                 "passwordCredentials": {
                     "username": globalVars.chameleonCloudUsername,
                     "password": globalVars.chameleonCloudPassword
