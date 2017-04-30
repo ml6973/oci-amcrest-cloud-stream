@@ -50,7 +50,7 @@ def realtime_swift_stream(self, channel=1, typeno=0):
          # Setup the filename for the uploaded segment
          ts = time.time()
          fileName = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-         fileName = camera.machine_name[5:] + " " + fileName
+         fileName = camera.machine_name[5:].strip() + " " + fileName
 
          # Retrieve authentication for swift and setup storage location
          my_token_id = chameleonAuth.auth(tenantName)
